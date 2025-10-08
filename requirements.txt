@@ -1,0 +1,11 @@
+streamlit
+plotly
+pandas
+numpy
+scikit-learn
+scipy
+statsmodels
+langchain
+langchain-google-genai
+python-dotenv
+tqdm
