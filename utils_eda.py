@@ -37,3 +37,4 @@ def build_result_block(block_type: str, title: str, content):
         "type": block_type,
         "content": content
     }
+

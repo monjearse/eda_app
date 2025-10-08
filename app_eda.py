@@ -238,6 +238,9 @@ with tabs[0]:
         # Inputs de usuário e pergunta
         if st.session_state["dfs"] is not None:
             st.session_state["user"] = st.text_input("Identificador do usuário", st.session_state["user"])
+            def limpar_pergunta():
+                st.session_state["question_input"] = ""
+
             q = st.text_input(
                 "Ex.: 'Quais variáveis têm outliers?', 'Mostre as distribuições', 'Correlação entre colunas'.",
                 key="question_input"
@@ -247,9 +250,14 @@ with tabs[0]:
             with col_q1:
                 ask = st.button("Responder")
             with col_q2:
-                if st.button("❌"):
-                    q = ""
-                    st.session_state["question_input"] = ""  # também limpa no campo visível
+                 st.button("❌", on_click=limpar_pergunta)
+                #if st.button("❌"):
+                 #   q = ""
+                    #st.session_state["question_input"] = ""  # também limpa no campo visível
+                    #st.button("❌", on_click=limpar_pergunta)
+                    # Marca para limpar após o ciclo atual
+                    #st.session_state.clear_question = True
+
 
             # 🔎 Perguntas sugeridas dinamicamente pelo AdvisorAgent
             # st.divider()
@@ -524,6 +532,8 @@ with tabs[3]:
         "anomalias e um agente de recomendações produz resumos"
         "e conclusões automáticas."
     )
+
+       # Logo do I2A2
 
     st.write(f"🔑 Modelo configurado: `{os.getenv('GEMINI_MODEL', 'gemini-2.0-flash-exp')}`")
     st.write("A chave da API é carregada automaticamente do arquivo `.env`.")
