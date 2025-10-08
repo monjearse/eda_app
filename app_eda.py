@@ -13,7 +13,8 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 
 load_dotenv()
 #gemini_key = os.getenv("GEMINI_API_KEY")
-gemini_key = st.secrets["GEMINI_API_KEY"]
+#gemini_key = st.secrets["GEMINI_API_KEY"]
+gemini_key = os.getenv("GEMINI_API_KEY") or st.secrets.get("GEMINI_API_KEY")
 
 init_memory()
 
