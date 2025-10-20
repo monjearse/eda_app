@@ -1,6 +1,8 @@
 import os
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain.prompts import ChatPromptTemplate
+#from langchain.prompts import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate
+
 
 from .analyst_agent import AnalystAgent
 from .visualizer_agent import VisualizerAgent
