@@ -30,4 +30,4 @@ plotly==5.24.1
 langchain==0.3.4
 langchain-core==0.3.12
 langchain-google-genai==1.0.8
-google-generativeai==0.8.2
+google-generativeai==0.8.0
